@@ -1,0 +1,9 @@
+mvn clean package -DskipTests
+unzip duke-dist/target/duke-dist-1.3-SNAPSHOT-bin.zip
+
+wget https://raw.githubusercontent.com/larsga/Duke/master/doc/example-data/countries-dbpedia.csv
+wget https://raw.githubusercontent.com/larsga/Duke/master/doc/example-data/countries.xml
+wget https://raw.githubusercontent.com/larsga/Duke/master/doc/example-data/countries-mondial.csv
+wget https://raw.githubusercontent.com/larsga/Duke/master/doc/example-data/countries-test.txt
+
+java -cp "duke-dist-1.3-SNAPSHOT/lib/*" no.priv.garshol.duke.Duke --testfile=countries-test.txt --testdebug --showmatches countries.xml
